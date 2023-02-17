@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main-div {
+
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        table,
+        th,
+        td {
+            border: 2px solid black;
+        }
+
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div>
+            <input type="text" name="search" id="search" placeholder="Search..." />
+            <div class="list">
+                <p>dipu</p>
+                <p>falcon</p>
+                <p>devid</p>
+                <p>jason</p>
+                <p>fredy</p>
+                <p>butcher</p>
+                <p>lusifer</p>
+                <p>homelander</p>
+                <p>asdhg</p>
+                <p>ssegrh</p>
+                <p>dddddd</p>
+                <p>ggggg</p>
+                <p>hhhhh</p>
+                <p>hhhhh</p>
+                <p>ooo</p>
+                <p>pppppp</p>
+            </div>
+        </div>
+
+
+        <div>
+            <input type="text" name="search" class="search" placeholder="Search..." />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John doe</td>
+                        <td>10</td>
+                        <td>0987654321</td>
+                    </tr>
+                    <tr>
+                        <td>Jane Doe</td>
+                        <td>34</td>
+                        <td>1234567890</td>
+                    </tr>
+                    <tr>
+                        <td>Bart</td>
+                        <td>44</td>
+                        <td>1234509879</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+
+    <script>
+        const searchInput = document.querySelector("#search");
+        const rows = document.querySelectorAll(".list p");
+        const seinput = document.querySelector(".search");
+        const rowstable = document.querySelectorAll("tbody tr");
+
+
+
+  
+
+        searchInput.addEventListener("keyup", function (e) {
+            const q = e.target.value.toLowerCase();
+            rows.forEach((row) => {
+                row.textContent.toLowerCase().startsWith(q)
+
+                    ? (row.style.display = "table-row")
+                    : (row.style.display = "none");
+            })
+        })
+
+
+        console.log(rowstable);
+        seinput.addEventListener("keyup", function (event) {
+            const q = event.target.value.toLowerCase();
+            rowstable.forEach((row) => {
+                row.querySelector("td").textContent.toLowerCase().startsWith(q)
+                    ? (row.style.display = "table-row")
+                    : (row.style.display = "none");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
